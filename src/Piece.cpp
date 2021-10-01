@@ -4,13 +4,45 @@
 
 #include "Piece.h"
 
+//constructor
 Piece::Piece(int pieceType, int team, int xPos, int yPos) {
     // 1 for Pawn, 2 for King, 0 for captured
-    this->type = pieceType;
+    this->pieceType = pieceType;
     // 1 for Black, 2 for Red, 0 for captured
     this->team = team;
     this->xPos = xPos;
     this->yPos = yPos;
 }
 
-Piece::~Piece();
+//destructor
+Piece::~Piece() {
+
+}
+
+//getters
+int Piece::getType(){
+    return pieceType;
+}
+int Piece::getTeam(){
+    return team;
+}
+int Piece::getXPos(){
+    return xPos;
+}
+int Piece::getYPos(){
+    return yPos;
+}
+
+//setters
+void Piece::setType(int pieceType){
+    pieceType = pieceType;
+}
+void Piece::setTeam(int team){
+    team = team;
+}
+void Piece::setXPos(int xPos){
+    xPos = xPos;
+}
+void Piece::setYPos(int yPos){
+    yPos = yPos;
+}

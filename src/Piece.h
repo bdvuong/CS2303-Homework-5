@@ -10,11 +10,23 @@ class Piece {
 public:
     //constructor
     Piece(int pieceType, int team, int xPos, int yPos);
+
     //destructor
-    Piece::~Piece();
+    virtual ~Piece();
+
+    //getters
+    int getType();
+    int getTeam();
+    int getXPos();
+    int getYPos();
+    //setters
+    void setType(int pieceType);
+    void setTeam(int team);
+    void setXPos(int xPos);
+    void setYPos(int yPos);
 
 private:
-    int type;
+    int pieceType;
     int team;
     int xPos;
     int yPos;
