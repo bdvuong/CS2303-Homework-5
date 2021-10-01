@@ -10,7 +10,9 @@ Piece::Piece(int pieceType, int team, int xPos, int yPos) {
     this->pieceType = pieceType;
     // 1 for Black, 2 for Red, 0 for captured
     this->team = team;
+    //where the piece is on the board horizontally
     this->xPos = xPos;
+    //where the piece is on the board vertically
     this->yPos = yPos;
 }
 
