@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : 2021HW5starter.cpp
-// Author      : 
+// Author      : Brandon Vuong
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style

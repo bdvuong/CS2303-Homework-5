@@ -13,7 +13,7 @@
 #include <stdlib.h>//strtol
 #include "Board.h"
 #include "LinkedList.h"
-
+#include "Piece.h"
 
 #define FILENAMELENGTHALLOWANCE 50
 
