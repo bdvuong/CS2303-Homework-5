@@ -8,6 +8,7 @@ CMakeFiles/ReferenceCheckers.dir/src/2021HW5starter.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/2021HW5starter.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
 CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj
@@ -16,14 +17,19 @@ CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj
 CMakeFiles/ReferenceCheckers.dir/src/CheckerMove.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.h
+CMakeFiles/ReferenceCheckers.dir/src/Piece.cpp.obj
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.cpp
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
 CMakeFiles/ReferenceCheckers.dir/src/Production.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 CMakeFiles/ReferenceCheckers.dir/src/Tests.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h

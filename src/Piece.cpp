@@ -18,7 +18,7 @@ Piece::Piece(int pieceType, int team, int xPos, int yPos) {
 
 //destructor
 Piece::~Piece() {
-
+    delete[] this;
 }
 
 //getters

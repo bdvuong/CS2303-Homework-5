@@ -42,7 +42,6 @@ bool Tests::testReadFile()
 
 	Board* theBoard = new Board();
 
-
 	Production* pP = new Production();
 
 	ok = pP->readFile("gameState.txt", theBoard); //read the file
@@ -73,20 +72,6 @@ bool Tests::testEnqueue()
 	}
 	return ok;
 }
-bool Tests::testGotAdjacencyMatrix()
-{
-	bool ok = true;
-	if(ok)
-	{
-		puts("testGotAdjacencyMatrix did pass");
-	}
-	else
-	{
-		puts("testGotAdjacencyMatrix did not pass.");
-	}
-	return ok;
-}
-
 bool Tests::testMakeLList()
 {
 	bool ok = true;

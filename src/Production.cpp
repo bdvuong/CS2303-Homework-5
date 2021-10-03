@@ -103,7 +103,7 @@ bool Production::prod(int argc, char* argv[])
 bool Production::readFile(char* filename, Board* theBoard)
 {
 	bool ok = true;
-	char temp = '-';
+	char temp = '0';
 	FILE* fp = fopen(filename, "r"); //read the file
 
 	if (fp == NULL)
@@ -113,8 +113,16 @@ bool Production::readFile(char* filename, Board* theBoard)
 	}
 	else
 	{
-		//TODO read the board from the file,
+		//TODO read the board from the file
+        puts("Scanning file to find pieces");
+        fscanf(fp, "d", BOARDCOLS);
 		//discover checkers
+        for (int col = 0; col < BOARDCOLS; ++col) {
+            printf("");
+            for (int row = 0; row < BOARDROWS; ++row) {
+
+            }
+        }
 		//make instances of class checker as needed
 		//board needs to keep track of instances of checkers
 		//checkers might also know where they are...

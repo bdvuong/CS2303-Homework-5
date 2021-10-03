@@ -8,6 +8,7 @@ CMakeFiles/ReferenceCheckers.dir/src/2021HW5starter.cpp.obj: \
  ../src/2021HW5starter.cpp \
  ../src/Board.h \
  ../src/LinkedList.h \
+ ../src/Piece.h \
  ../src/Production.h \
  ../src/Tests.h
 CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj: \
@@ -16,14 +17,19 @@ CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj: \
 CMakeFiles/ReferenceCheckers.dir/src/CheckerMove.cpp.obj: \
  ../src/CheckerMove.cpp \
  ../src/CheckerMove.h
+CMakeFiles/ReferenceCheckers.dir/src/Piece.cpp.obj: \
+ ../src/Piece.cpp \
+ ../src/Piece.h
 CMakeFiles/ReferenceCheckers.dir/src/Production.cpp.obj: \
  ../src/Board.h \
  ../src/LinkedList.h \
+ ../src/Piece.h \
  ../src/Production.cpp \
  ../src/Production.h
 CMakeFiles/ReferenceCheckers.dir/src/Tests.cpp.obj: \
  ../src/Board.h \
  ../src/LinkedList.h \
+ ../src/Piece.h \
  ../src/Production.h \
  ../src/Tests.cpp \
  ../src/Tests.h

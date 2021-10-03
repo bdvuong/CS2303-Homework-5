@@ -14,19 +14,9 @@ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
 Production.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.cpp
-Board.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
-
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
 stdio.h
 -
-
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.cpp
-CheckerMove.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.h
-
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.h
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
 stdlib.h
@@ -35,6 +25,12 @@ stdio.h
 -
 stdbool.h
 -
+
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.cpp
+Piece.h
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
+
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.cpp
 Production.h
@@ -53,6 +49,8 @@ Board.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
 LinkedList.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
+Piece.h
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.cpp
 Tests.h

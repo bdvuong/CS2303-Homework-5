@@ -15,6 +15,7 @@
 #include "LinkedList.h"
 #include "Piece.h"
 
+//constants
 #define FILENAMELENGTHALLOWANCE 50
 
 class Production {
