@@ -40,8 +40,6 @@ bool Tests::testReadFile()
 	int answer = -1;
 	int rightAnswer = 8;
 
-	Production* pP = new Production();
-
 	ok = pP->readFile("gameState.txt", theBoard); //read the file
 
 	theBoard->displayBoard();
@@ -118,6 +116,15 @@ bool Tests::testFileOutput()
 
 bool Tests::testPrintToFile() {
     bool ok = true;
+
     char* outputFile = "testOutput.txt";
     this->theBoard->printToFile(outputFile);
+
+    if(pP->getYesNo("Check the file testOutput.txt. Does the file match the board printed in the console previously?")) {
+        puts("testPrintToFile passed!");
+    }
+    else {
+        puts("testPrintToFile failed!");
+    }
+
 }

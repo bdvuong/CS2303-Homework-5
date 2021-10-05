@@ -27,6 +27,7 @@ private:
     bool testPrintToFile();
 
     Board* theBoard = new Board;
+    Production* pP = new Production();
 };
 
 #endif /* TESTS_H_ */
