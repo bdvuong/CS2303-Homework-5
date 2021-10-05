@@ -115,14 +115,28 @@ bool Production::readFile(char* filename, Board* theBoard)
 	{
 		//TODO read the board from the file
         puts("Scanning file to find pieces");
-        fscanf(fp, "d", BOARDCOLS);
 		//discover checkers
         for (int col = 0; col < BOARDCOLS; ++col) {
-            printf("");
             for (int row = 0; row < BOARDROWS; ++row) {
-
+                fscanf(fp, " %c", &temp);
+                //temp = getc(fp);
+                switch((int) temp - 48) {
+                    //empty space
+                    case 0:
+                        theBoard->checkerBoard[col][row] = new Piece(0,0,row,col);
+                        break;
+                    //black piece
+                    case 1:
+                        theBoard->checkerBoard[col][row] = new Piece(1,1,row,col);
+                        break;
+                    //red piece
+                    case 2:
+                        theBoard->checkerBoard[col][row] = new Piece(1,2,row,col);
+                        break;
+                }
             }
         }
+        //theBoard->displayBoard();
 		//make instances of class checker as needed
 		//board needs to keep track of instances of checkers
 		//checkers might also know where they are...

@@ -17,6 +17,8 @@
 
 //constants
 #define FILENAMELENGTHALLOWANCE 50
+#define BOARDCOLS 8
+#define BOARDROWS 8
 
 class Production {
 public:
