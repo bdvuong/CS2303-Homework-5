@@ -345,7 +345,7 @@ void Board::movePiece(move2 move) {
     }
 }
 
-void Board::updateKings() {
+void Board::promoteKings() {
     for (int i = 0; i < BOARDCOLS; ++i) {
         for (int j = 0; j < BOARDROWS; ++j) {
             Piece* piece = checkerBoard[i][j];

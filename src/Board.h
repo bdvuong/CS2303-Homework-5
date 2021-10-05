@@ -39,6 +39,8 @@ public:
     void updateKings();
 
     move2 pickRandomMove(int teamTurn);
+
+    void promoteKings();
 };
 
 #endif /* BOARD_H_ */
