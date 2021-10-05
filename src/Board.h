@@ -8,6 +8,7 @@
 #ifndef BOARD_H_
 #define BOARD_H_
 #include <stdio.h>
+#include "Piece.h"
 
 class Board {
 public:
@@ -15,6 +16,7 @@ public:
 	virtual ~Board();
 	void displayBoard();
 	void printToFile(char* filename);
+    Piece* checkerBoard[8][8];
 };
 
 #endif /* BOARD_H_ */

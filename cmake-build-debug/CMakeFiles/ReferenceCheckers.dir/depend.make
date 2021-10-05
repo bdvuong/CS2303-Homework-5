@@ -13,7 +13,10 @@ CMakeFiles/ReferenceCheckers.dir/src/2021HW5starter.cpp.obj: \
  ../src/Tests.h
 CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj: \
  ../src/Board.cpp \
- ../src/Board.h
+ ../src/Board.h \
+ ../src/LinkedList.h \
+ ../src/Piece.h \
+ ../src/Production.h
 CMakeFiles/ReferenceCheckers.dir/src/CheckerMove.cpp.obj: \
  ../src/CheckerMove.cpp \
  ../src/CheckerMove.h

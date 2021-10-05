@@ -14,6 +14,9 @@ CMakeFiles/ReferenceCheckers.dir/src/2021HW5starter.cpp.obj
 CMakeFiles/ReferenceCheckers.dir/src/Board.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
+ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 CMakeFiles/ReferenceCheckers.dir/src/CheckerMove.cpp.obj
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.cpp
  C:/Users/vuong/CLionProjects/ReferenceCheckers/src/CheckerMove.h
