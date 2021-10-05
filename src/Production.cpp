@@ -103,7 +103,7 @@ bool Production::prod(int argc, char* argv[])
 bool Production::readFile(char* filename, Board* theBoard)
 {
 	bool ok = true;
-	char temp = '0';
+	char temp = '-';
 	FILE* fp = fopen(filename, "r"); //read the file
 
 	if (fp == NULL)
@@ -119,19 +119,24 @@ bool Production::readFile(char* filename, Board* theBoard)
         for (int col = 0; col < BOARDCOLS; ++col) {
             for (int row = 0; row < BOARDROWS; ++row) {
                 fscanf(fp, " %c", &temp);
-                //temp = getc(fp);
-                switch((int) temp - 48) {
+                switch(temp) {
                     //empty space
-                    case 0:
+                    case '-':
                         theBoard->checkerBoard[col][row] = new Piece(0,0,row,col);
                         break;
-                    //black piece
-                    case 1:
+                    //black pieces
+                    case 'b':
                         theBoard->checkerBoard[col][row] = new Piece(1,1,row,col);
                         break;
+                    case 'B':
+                        theBoard->checkerBoard[col][row] = new Piece(2,1,row,col);
+                        break;
                     //red piece
-                    case 2:
+                    case 'r':
                         theBoard->checkerBoard[col][row] = new Piece(1,2,row,col);
+                        break;
+                    case 'R':
+                        theBoard->checkerBoard[col][row] = new Piece(2,2,row,col);
                         break;
                 }
             }
