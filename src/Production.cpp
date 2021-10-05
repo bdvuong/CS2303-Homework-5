@@ -91,11 +91,6 @@ bool Production::prod(int argc, char* argv[])
 		answer = readFile(filename, theBoard); //read the file
 		puts("Back from read file"); fflush(stdout);
 
-
-
-
-
-
 	}
 	return answer;
 }

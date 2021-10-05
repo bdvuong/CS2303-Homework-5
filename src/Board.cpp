@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <fstream>
 #include "Board.h"
 #include "Production.h"
 
@@ -48,4 +49,30 @@ void Board::displayBoard()
 void Board::printToFile(char* filename)
 {
     //TODO
+    std::ofstream output;
+    output.open(filename);
+    int tempTeam = -1;
+    int tempType = -1;
+    for (int col = 0; col < BOARDCOLS; ++col) {
+        for (int row = 0; row < BOARDROWS; ++row) {
+            tempTeam = checkerBoard[col][row]->getTeam();
+            tempType = checkerBoard[col][row]->getType();
+            if(tempTeam == 0) {
+                output << "-";
+            }
+            else if(tempTeam == 1 && tempType == 1) {
+                output << "b";
+            }
+            else if(tempTeam == 1 && tempType == 2) {
+                output << "B";
+            }
+            else if(tempTeam == 2 && tempType == 1) {
+                output << "r";
+            }
+            else if(tempTeam == 2 && tempType == 2) {
+                output << "R";
+            }
+        }
+        output << "\n";
+    }
 }

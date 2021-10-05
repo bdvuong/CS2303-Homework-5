@@ -27,7 +27,8 @@ bool Tests::tests()
 	bool ok4 = testEnqueue();
 	//pedagogical bool ok5 = testRemoveFromList();
 	bool ok6 = testPrintHistory();
-	answer = ok1 && ok3 && ok4  && ok6;
+    bool ok7 = testPrintToFile();
+	answer = ok1 && ok3 && ok4  && ok6 && ok7;
 	return answer;
 }
 
@@ -38,9 +39,6 @@ bool Tests::testReadFile()
 	//the file tells how many rooms there are
 	int answer = -1;
 	int rightAnswer = 8;
-
-
-	Board* theBoard = new Board();
 
 	Production* pP = new Production();
 
@@ -118,4 +116,8 @@ bool Tests::testFileOutput()
 	return ok;
 }
 
-
+bool Tests::testPrintToFile() {
+    bool ok = true;
+    char* outputFile = "testOutput.txt";
+    this->theBoard->printToFile(outputFile);
+}

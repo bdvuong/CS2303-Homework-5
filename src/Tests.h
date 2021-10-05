@@ -20,11 +20,13 @@ public:
 private:
 	bool testReadFile();
 	bool testEnqueue();
-	bool testGotAdjacencyMatrix();
 	bool testMakeLList();
 	//pedagogical bool testRemoveFromList();
 	bool testPrintHistory();
 	bool testFileOutput();
+    bool testPrintToFile();
+
+    Board* theBoard = new Board;
 };
 
 #endif /* TESTS_H_ */
