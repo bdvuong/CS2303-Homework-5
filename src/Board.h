@@ -10,6 +10,18 @@
 #include <stdio.h>
 #include "Piece.h"
 
+typedef struct {
+    int initX;
+    int initY;
+    int toX;
+    int toY;
+} move2;
+
+typedef struct {
+    move2* moves;
+    int size;
+} moveSet;
+
 class Board {
 public:
 	Board();
@@ -17,6 +29,16 @@ public:
 	void displayBoard();
 	void printToFile(char* filename);
     Piece* checkerBoard[8][8];
+
+    moveSet getPossibleMoves();
+
+    bool isValidMove(move2 move, Piece *piece);
+
+    void movePiece(move2 move);
+
+    void updateKings();
+
+    move2 pickRandomMove(int teamTurn);
 };
 
 #endif /* BOARD_H_ */

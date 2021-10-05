@@ -14,6 +14,16 @@ C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
 Production.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.cpp
+iostream
+-
+fstream
+-
+Board.h
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
+Production.h
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
+
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
 stdio.h
 -
@@ -29,6 +39,10 @@ stdbool.h
 -
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
+
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.cpp
+Production.h
+C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 stdio.h

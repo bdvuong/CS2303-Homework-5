@@ -19,7 +19,7 @@ Tests::~Tests() {
 
 bool Tests::tests()
 {
-	bool answer = true;
+	bool answer;
 
 	bool ok1 = testReadFile();
 	bool ok2 = testFileOutput();
@@ -37,13 +37,14 @@ bool Tests::testReadFile()
 	puts("starting testReadFile"); fflush(stdout);
 	bool ok = true;
 	//the file tells how many rooms there are
-	int answer = -1;
 	int rightAnswer = 8;
 
 	ok = pP->readFile("gameState.txt", theBoard); //read the file
 
-	theBoard->displayBoard();
-	ok = pP->getYesNo("Does the board look right?");
+    //read file already displays board
+	//theBoard->displayBoard();
+
+    ok = pP->getYesNo("Does the board look right?");
 	if(ok)
 	{
 		puts("testReadfile did pass");
@@ -120,11 +121,13 @@ bool Tests::testPrintToFile() {
     char* outputFile = "testOutput.txt";
     this->theBoard->printToFile(outputFile);
 
-    if(pP->getYesNo("Check the file testOutput.txt. Does the file match the board printed in the console previously?")) {
+    if(pP->getYesNo("Check the file testOutput.txt. Does the file match the board printed previously?")) {
         puts("testPrintToFile passed!");
     }
     else {
         puts("testPrintToFile failed!");
+        ok = false;
     }
 
+    return ok;
 }

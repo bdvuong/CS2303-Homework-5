@@ -108,9 +108,8 @@ bool Production::readFile(char* filename, Board* theBoard)
 	}
 	else
 	{
-		//TODO read the board from the file
         puts("Scanning file to find pieces");
-		//discover checkers
+		//discover checkers and initialize board
         for (int col = 0; col < BOARDCOLS; ++col) {
             for (int row = 0; row < BOARDROWS; ++row) {
                 fscanf(fp, " %c", &temp);
@@ -120,23 +119,27 @@ bool Production::readFile(char* filename, Board* theBoard)
                         theBoard->checkerBoard[col][row] = new Piece(0,0,row,col);
                         break;
                     //black pieces
+                    //black pawn
                     case 'b':
                         theBoard->checkerBoard[col][row] = new Piece(1,1,row,col);
                         break;
+                    //black king
                     case 'B':
                         theBoard->checkerBoard[col][row] = new Piece(2,1,row,col);
                         break;
                     //red piece
+                    //red pawn
                     case 'r':
                         theBoard->checkerBoard[col][row] = new Piece(1,2,row,col);
                         break;
+                    //red king
                     case 'R':
                         theBoard->checkerBoard[col][row] = new Piece(2,2,row,col);
                         break;
                 }
             }
         }
-        //theBoard->displayBoard();
+        theBoard->displayBoard();
 		//make instances of class checker as needed
 		//board needs to keep track of instances of checkers
 		//checkers might also know where they are...
