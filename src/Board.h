@@ -28,19 +28,13 @@ public:
 	virtual ~Board();
 	void displayBoard();
 	void printToFile(char* filename);
-    Piece* checkerBoard[8][8];
-
     moveSet getPossibleMoves();
-
     bool isValidMove(move2 move, Piece *piece);
-
     void movePiece(move2 move);
-
-    void updateKings();
-
     move2 pickRandomMove(int teamTurn);
-
     void promoteKings();
+
+    Piece* checkerBoard[8][8];
 };
 
 #endif /* BOARD_H_ */
