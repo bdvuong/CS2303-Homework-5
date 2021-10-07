@@ -9,7 +9,7 @@ Piece::Piece(int pieceType, int team, int xPos, int yPos) {
     // 1 for Pawn, 2 for King, 0 for captured
     this->pieceType = pieceType;
     // 1 for Black, 2 for Red, 0 for captured
-    this->team = team;
+    this->pieceTeam = team;
     //where the piece is on the board horizontally
     this->xPos = xPos;
     //where the piece is on the board vertically
@@ -26,7 +26,7 @@ int Piece::getType(){
     return pieceType;
 }
 int Piece::getTeam(){
-    return team;
+    return pieceTeam;
 }
 int Piece::getXPos(){
     return xPos;
@@ -36,15 +36,15 @@ int Piece::getYPos(){
 }
 
 //setters
-void Piece::setType(int pieceType){
-    pieceType = pieceType;
+void Piece::setType(int type){
+    pieceType = type;
 }
 void Piece::setTeam(int team){
-    team = team;
+    pieceTeam = team;
 }
-void Piece::setXPos(int xPos){
-    xPos = xPos;
+void Piece::setXPos(int x){
+    xPos = x;
 }
-void Piece::setYPos(int yPos){
-    yPos = yPos;
+void Piece::setYPos(int y){
+    yPos = y;
 }

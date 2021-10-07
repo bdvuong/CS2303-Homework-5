@@ -27,7 +27,7 @@ public:
 
 private:
     int pieceType;
-    int team;
+    int pieceTeam;
     int xPos;
     int yPos;
 };

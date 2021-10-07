@@ -50,7 +50,7 @@ void Board::displayBoard()
 void Board::printToFile(char* filename)
 {
     std::ofstream output;
-    output.open(filename);
+    output.open(filename, std::ios_base::app);
     int tempTeam = -1;
     int tempType = -1;
     for (int col = 0; col < BOARDCOLS; ++col) {
@@ -75,11 +75,13 @@ void Board::printToFile(char* filename)
         }
         output << "\n";
     }
+    output.close();
 }
 
 moveSet Board::getPossibleMoves() {
+    //std::cout << "in getPossibleMoves\n";
     move2* possibleMoves = 0;
-    possibleMoves = new move2[BOARDROWS];
+    possibleMoves = new move2[200];
 
     int numMoves = 0;
 
@@ -87,7 +89,7 @@ moveSet Board::getPossibleMoves() {
     for (int i = 0; i < BOARDCOLS; ++i) {
         for (int j = 0; j < BOARDROWS; ++j) {
             if(checkerBoard[i][j]->getTeam() == 1) {
-                move2 leftMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() - 1, checkerBoard[i][j]->getYPos() - 1};
+                move2 leftMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() - 1, checkerBoard[i][j]->getYPos() + 1};
                 move2 rightMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() + 1, checkerBoard[i][j]->getYPos() + 1};
                 if(isValidMove(leftMove, checkerBoard[i][j])){
                     possibleMoves[numMoves] = leftMove;
@@ -98,9 +100,9 @@ moveSet Board::getPossibleMoves() {
                     numMoves++;
                 }
             }
-            else if(checkerBoard[i][j]->getTeam() == 1){
+            else if(checkerBoard[i][j]->getTeam() == 2){
                 move2 leftMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() - 1, checkerBoard[i][j]->getYPos() - 1};
-                move2 rightMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() + 1, checkerBoard[i][j]->getYPos() + 1};
+                move2 rightMove = {checkerBoard[i][j]->getXPos(),checkerBoard[i][j]->getYPos(),checkerBoard[i][j]->getXPos() + 1, checkerBoard[i][j]->getYPos() - 1};
                 if(isValidMove(leftMove, checkerBoard[i][j])){
                     possibleMoves[numMoves] = leftMove;
                     numMoves++;
@@ -114,6 +116,7 @@ moveSet Board::getPossibleMoves() {
         }
     }
     moveSet moveSet = {possibleMoves, numMoves};
+    free(possibleMoves);
     return moveSet;
 }
 
@@ -121,48 +124,56 @@ bool Board::isValidMove(move2 move, Piece* piece) {
     bool isValidMove = false;
 
     //if piece is a pawn
+    //std::cout << "checking if the piece is a pawn\n";
     if(piece->getType() == 1) {
-
         //check if this move is diagonal
+        //std::cout << "checking if diagonal move\n";
         if((move.initX == move.toX - 1 || move.initX == move.toX + 1) && (move.toY == move.initY - 1 || move.toY == move.initY + 1)){
-
             //check for which direction the piece is moving in and if it is the correct direction
-            if((piece->getTeam() == 1 && move.toY - move.initY == -1) || (piece->getTeam() == 2 && move.toY - move.initY == 1)) {
+            //std::cout << "checking for direction\n";
+            if((piece->getTeam() == 1 && move.toY - move.initY == 1) || (piece->getTeam() == 2 && move.toY - move.initY == -1)) {
                 //make sure the piece's move is within the board
+                //std::cout << "checking if move is within board\n";
                 if(move.toX >= 0 && move.toX < BOARDCOLS && move.toY >= 0 && move.toY < BOARDCOLS) {
                     //check for piece
-
+                    //std::cout << "checking to see piece diagonal to this one\n";
                     //there is no piece here
                     if(checkerBoard[move.toX][move.toY]->getTeam() == 0) {
+                        //std::cout << "there is no piece diagonal to this one\n";
                         isValidMove = true;
                     }
                     //there is a piece there, check to see if it is on the opposite team
                     else {
                         // if piece is a black piece, check the piece to the diagonal to see if it is a red piece
+                        //std::cout << "this is a black piece\n";
                         if(piece->getTeam() == 1) {
                             if(checkerBoard[move.toX][move.toY]->getTeam() == 2) {
-
+                                //std::cout << "check if we can jump\n";
                                 //check to see if the piece can jump
                                 int direction = move.toX - move.initX;
 
                                 //if pawn is moving left
+                                //std::cout << "check if pawn is moving left\n";
                                 if(direction == - 1) {
 
                                     //make sure diagonal is within board constraints
                                     if(move.toX - 1 >= 0 && move.toX - 1 < BOARDCOLS && move.toY - 1 < BOARDROWS && move.toY - 1 >= 0) {
-
+                                        //std::cout << "checking if within board\n";
                                         //check if spot is free
+                                        //std::cout << "checking if spot is free\n";
                                         if(checkerBoard[move.toX - 1][move.toY - 1]->getTeam() == 0) {
                                             isValidMove = true;
                                         }
                                     }
                                 }
+                                //std::cout << "check if pawn is moving right\n";
                                 // else the pawn is moving right
-                                else if(direction == 1) {
+                                if(direction == 1) {
                                     //make sure diagonal is within board constraints
                                     if(move.toX + 1 >= 0 && move.toX + 1 < BOARDCOLS && move.toY - 1 < BOARDROWS && move.toY - 1 >= 0) {
 
                                         //check if spot is free
+                                        //std::cout << "check if spot is free\n";
                                         if(checkerBoard[move.toX + 1][move.toY - 1]->getTeam() == 0) {
                                             isValidMove = true;
                                         }
@@ -172,13 +183,14 @@ bool Board::isValidMove(move2 move, Piece* piece) {
                         }
                         //else we have a red piece, check for black piece
                         else if(piece->getTeam() == 2) {
-
+                            //std::cout << "red piece\n";
                             if(checkerBoard[move.toX][move.toY]->getTeam() == 1) {
-
+                                //std::cout << "can the red piece jump\n";
                                 //check to see if the piece can jump
                                 int direction = move.toX - move.initX;
 
                                 //if pawn is moving left
+                                //std::cout << "is the red piece able to jump\n";
                                 if(direction == - 1) {
 
                                     //make sure diagonal is within board constraints
@@ -303,6 +315,7 @@ bool Board::isValidMove(move2 move, Piece* piece) {
 }
 
 void Board::movePiece(move2 move) {
+    //std::cout << "moving piece\n";
     Piece* initPiece = checkerBoard[move.initX][move.initY];
     Piece* afterMovePiece = checkerBoard[move.toX][move.toY];
 
@@ -329,20 +342,21 @@ void Board::movePiece(move2 move) {
 
         //if black piece, move a black piece
         if(initPiece->getTeam() == 1) {
-            checkerBoard[move.toX + direction][move.toY - 1]->setType((initPiece->getType()));
-            checkerBoard[move.toX + direction][move.toY - 1]->setTeam(1);
+            this->checkerBoard[move.toX + direction][move.toY - 1]->setType((initPiece->getType()));
+            this->checkerBoard[move.toX + direction][move.toY - 1]->setTeam(1);
         }
         //otherwise, we have a red piece, so move a red piece
         else if(initPiece->getTeam() == 2) {
-            checkerBoard[move.toX + direction][move.toY +1]->setType((initPiece->getType()));
-            checkerBoard[move.toX + direction][move.toY + 1]->setTeam(2);
+            this->checkerBoard[move.toX + direction][move.toY +1]->setType((initPiece->getType()));
+            this->checkerBoard[move.toX + direction][move.toY + 1]->setTeam(2);
         }
         //reset the original position of the piece and the piece that was jumped
-        checkerBoard[move.initX][move.initY]->setTeam(0);
-        checkerBoard[move.initX][move.initY]->setType(0);
-        checkerBoard[move.toX][move.toY]->setTeam(0);
-        checkerBoard[move.toX][move.toY]->setType(0);
+        this->checkerBoard[move.initX][move.initY]->setTeam(0);
+        this->checkerBoard[move.initX][move.initY]->setType(0);
+        this->checkerBoard[move.toX][move.toY]->setTeam(0);
+        this->checkerBoard[move.toX][move.toY]->setType(0);
     }
+    this->displayBoard();
 }
 
 void Board::promoteKings() {

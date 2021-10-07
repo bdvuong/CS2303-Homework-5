@@ -35,9 +35,9 @@ bool Production::prod(int argc, char* argv[])
 		char filename[FILENAMELENGTHALLOWANCE];
 		char* eptr=(char*) malloc(sizeof(char*));
 		long aL=-1L;
-		int maxRooms;
+		int maxMoves;
 		float maxTreasure;
-		double maxTreas;
+		char* startingPlayer;
 
 		for(int i = 1; i<argc; i++) //don't want to read argv[0]
 				{//argv[i] is a string
@@ -62,18 +62,17 @@ bool Production::prod(int argc, char* argv[])
 						}
 						break;
 					case 2:
-						//this is maximum number of rooms
+						//this is maximum number of moves
 
 						aL = strtol(argv[i], &eptr, 10);
-						maxRooms = (int) aL;
-						printf("Number of rooms is %d\n",maxRooms);fflush(stdout);
+						maxMoves = (int) aL;
+						printf("Number of moves is %d\n",maxMoves);fflush(stdout);
 						break;
 					case 3:
-						//this is maximum amount of treasure
+						//this is which player starts first
 
-						maxTreas = atof(argv[i]);
-						printf("Amount of  treasure is %f\n",maxTreas);fflush(stdout);
-						maxTreasure = (float) maxTreas;
+						startingPlayer = argv[i];
+						printf("Starting player is %s\n",startingPlayer);fflush(stdout);
 						break;
 
 					default:
@@ -90,6 +89,29 @@ bool Production::prod(int argc, char* argv[])
 		puts("Before read file"); fflush(stdout);
 		answer = readFile(filename, theBoard); //read the file
 		puts("Back from read file"); fflush(stdout);
+        int playerNumber = -1;
+        if(!strcmp(startingPlayer, "red")) {
+            playerNumber = 2;
+        }
+        else {
+            playerNumber = 1;
+        }
+
+        for (int i = 0; i < maxMoves; ++i) {
+            move2 randomMove = theBoard->pickRandomMove(playerNumber);
+            theBoard->movePiece(randomMove);
+            //promote kings
+            theBoard->promoteKings();
+            //change turns
+            if(playerNumber == 1) {
+                playerNumber = 2;
+            }
+            else if(playerNumber == 2) {
+                playerNumber = 1;
+            }
+            theBoard->displayBoard();
+            //theBoard->printToFile("output.txt");
+        }
 
 	}
 	return answer;

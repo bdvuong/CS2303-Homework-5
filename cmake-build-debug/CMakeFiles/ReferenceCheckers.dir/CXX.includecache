@@ -6,18 +6,12 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/2021HW5starter.cpp
-iostream
--
-Tests.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
-Production.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
-
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.cpp
 iostream
 -
 fstream
+-
+ctime
 -
 Board.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Board.h
@@ -39,10 +33,6 @@ stdbool.h
 -
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
-
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.cpp
-Production.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
 stdio.h
@@ -59,16 +49,4 @@ LinkedList.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/LinkedList.h
 Piece.h
 C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Piece.h
-
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.cpp
-Tests.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
-stdbool.h
--
-
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Tests.h
-Production.h
-C:/Users/vuong/CLionProjects/ReferenceCheckers/src/Production.h
-stdio.h
--
 
